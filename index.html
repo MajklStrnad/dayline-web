@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dayline</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<meta name="description" content="A calm calendar and task list with reminders.">
+<meta name="theme-color" content="#FAF9FC">
+<meta name="color-scheme" content="light dark">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Dayline">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<script>
+  // Apply the saved theme before first paint so there is no flash.
+  try {
+    var m = localStorage.getItem('dayline.mode');
+    if (m === 'dark' || m === 'light') document.documentElement.dataset.theme = m;
+    var l = localStorage.getItem('dayline.lang');
+    if (l === 'cs') document.documentElement.lang = 'cs';
+  } catch (e) {}
+</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="root"><div class="shell" id="shell"></div></div>
+<noscript>Dayline needs JavaScript to run.</noscript>
+<script src="app.js"></script>
+</body>
+</html>
